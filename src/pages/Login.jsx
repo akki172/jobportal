@@ -19,7 +19,7 @@ function Login() {
 
   try {
     const response = await fetch(
-      "http://localhost:8080/api/auth/login",
+      "https://jobportal-backend-p1cg.onrender.com/api/auth/login",
       {
         method: "POST",
         headers: {

@@ -36,7 +36,7 @@ function Signup() {
 
   try {
     const response = await fetch(
-      "http://localhost:8080/api/auth/signup",
+      "https://jobportal-backend-p1cg.onrender.com/api/auth/signup",
       {
         method: "POST",
         headers: {
