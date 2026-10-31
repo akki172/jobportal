@@ -1,0 +1,235 @@
+/* ===== Dashboard ===== */
+.dash {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Navbar */
+.dash-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.dash-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.dash-brand span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dash-brand:hover {
+  color: var(--ink);
+}
+
+.dash-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dash-email {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.dash-logout {
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 2px solid var(--line);
+  color: var(--ink);
+  font-weight: 600;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.dash-logout:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Main */
+.dash-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Welcome banner */
+.dash-welcome {
+  padding: 44px 40px;
+  border-radius: 22px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.2), transparent 45%),
+    var(--gradient);
+  box-shadow: var(--shadow-md);
+  animation: dashIn 0.5s ease;
+}
+
+.dash-welcome h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.dash-welcome p {
+  opacity: 0.9;
+  font-size: 1.05rem;
+}
+
+@keyframes dashIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stats */
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.dash-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dash-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.dash-stat-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  background: var(--brand-soft);
+  border-radius: 14px;
+}
+
+.dash-stat strong {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.dash-stat span {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* Jobs */
+.dash-jobs h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.dash-job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dash-job {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dash-job:hover {
+  border-color: var(--brand);
+  box-shadow: var(--shadow-md);
+}
+
+.dash-job-logo {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--gradient);
+  color: #fff;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.dash-job-info {
+  flex: 1;
+}
+
+.dash-job-info h4 {
+  font-size: 1rem;
+}
+
+.dash-job-info p {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.dash-apply {
+  padding: 9px 22px;
+  border-radius: 10px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dash-apply:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .dash-nav {
+    padding: 14px 18px;
+  }
+  .dash-email {
+    display: none;
+  }
+  .dash-welcome {
+    padding: 32px 24px;
+  }
+  .dash-job {
+    padding: 14px;
+  }
+}
